@@ -1,0 +1,27 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+  <TextView
+         android:layout_marginTop="2dp"
+         android:id="@+id/userLogin"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         
+         android:text="@string/userLogin" />
+
+     <Button
+         android:layout_marginTop="2dp"
+         android:id="@+id/bntPedido"
+         android:layout_width="match_parent"
+         android:layout_height="wrap_content"
+         android:text="@string/pedido" />
+
+     <Button
+         android:layout_marginTop="2dp"
+         android:id="@+id/bntCardapio"
+         android:layout_width="match_parent"
+         android:layout_height="wrap_content"
+         android:text="@string/cardapio" />
+    
+</LinearLayout>
