@@ -35,7 +35,8 @@ public class Principal extends ActionBarActivity{
 		
 		@Override
 		public void onClick(View v) {
-
+			Intent i_pedido = new Intent(Principal.this, Pedido.class);
+			startActivity(i_pedido);
 			
 		}
 	};

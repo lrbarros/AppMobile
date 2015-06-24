@@ -13,5 +13,14 @@
     <string name="userLogin">Bem Vindo</string>
     <string name="pedido">Pedido</string>
     <string name="cardapio">Gerenciar Cardapio</string>
+    <string name="title_activity_pedidos">Pedidos</string>
+    <string name="atendente">"Atentendente: "</string>
+    <string name="HR_Pedido">"Hora do pedido: "</string>
+    <string name="idPedido">"Número do pedido: "</string>
+    <string name="AddItem">ADD +</string>
+    <string name="valor">Valor:</string>
+    <string name="bntCancel">Cancelar</string>
+    <string name="btnEnviar">Enviar</string>
+    <string name="title_activity_add_item">AddItem</string>
 
 </resources>
