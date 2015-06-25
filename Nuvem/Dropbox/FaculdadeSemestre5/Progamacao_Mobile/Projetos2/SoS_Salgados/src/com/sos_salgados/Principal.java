@@ -1,6 +1,8 @@
 package com.sos_salgados;
 
 
+import java.io.Serializable;
+
 import android.support.v7.app.ActionBarActivity;
 import android.content.Intent;
 import android.os.Bundle;
@@ -11,15 +13,16 @@ import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.TextView;
 
-public class Principal extends ActionBarActivity{
+public class Principal extends ActionBarActivity implements Serializable{
 	TextView userId;
 	Button bntPedido;
 	Button bntCardapio;
+	String login;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_principal);
-		String login = getIntent().getStringExtra("login");
+		login = getIntent().getStringExtra("login");
 		userId= (TextView)findViewById(R.id.userLogin);
 		userId.setText(userId.getText().toString()+": "+login);
 		
@@ -35,7 +38,9 @@ public class Principal extends ActionBarActivity{
 		
 		@Override
 		public void onClick(View v) {
-			Intent i_pedido = new Intent(Principal.this, Pedido.class);
+			Intent i_pedido = new Intent(Principal.this, PedidoActivity.class);
+			//manda login para pedido
+			i_pedido.putExtra("login", login.toString());
 			startActivity(i_pedido);
 			
 		}
@@ -45,7 +50,7 @@ public class Principal extends ActionBarActivity{
 		
 		@Override
 		public void onClick(View v) {
-			Intent i_cardapio = new Intent(Principal.this, Cardapio.class);
+			Intent i_cardapio = new Intent(Principal.this, CardapioActivity.class);
 			startActivity(i_cardapio);
 		}
 	};

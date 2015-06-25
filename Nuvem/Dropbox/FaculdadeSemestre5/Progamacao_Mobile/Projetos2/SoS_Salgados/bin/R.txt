@@ -361,14 +361,13 @@ int id action_mode_close_button 0x7f090020
 int id action_settings 0x7f09004d
 int id activity_chooser_view_content 0x7f090021
 int id always 0x7f090014
-int id atendenteId 0x7f090044
 int id beginning 0x7f09001b
 int id bntCardapio 0x7f09004c
 int id bntLogin 0x7f090042
 int id bntPedido 0x7f09004b
 int id btnAdd 0x7f090047
-int id btnCancel 0x7f090049
-int id btnOk 0x7f090048
+int id btnCancel 0x7f090048
+int id btnEnviar 0x7f090049
 int id cardapioList 0x7f09003f
 int id checkbox 0x7f090029
 int id collapseActionView 0x7f090015
@@ -384,7 +383,6 @@ int id expanded_menu 0x7f090028
 int id home 0x7f090000
 int id homeAsUp 0x7f09000e
 int id icon 0x7f090026
-int id idHrPedido 0x7f090045
 int id idPedido 0x7f090043
 int id ifRoom 0x7f090016
 int id image 0x7f090023
@@ -415,6 +413,8 @@ int id split_action_bar 0x7f090004
 int id submit_area 0x7f09003c
 int id tabMode 0x7f09000c
 int id title 0x7f090027
+int id txtAtendente 0x7f090044
+int id txtHrPedido 0x7f090045
 int id txtSenha 0x7f090041
 int id txtUsuario 0x7f090040
 int id txtValor 0x7f090046

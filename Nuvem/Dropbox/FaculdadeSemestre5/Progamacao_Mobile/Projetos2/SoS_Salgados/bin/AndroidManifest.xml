@@ -23,7 +23,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".Cardapio"
+            android:name="com.sos_salgados.CardapioActivity"
             android:label="@string/title_activity_cardapio" >
         </activity>
         <activity
@@ -35,11 +35,11 @@
             android:label="@string/title_activity_principal" >
         </activity>
         <activity
-            android:name=".Pedido"
+            android:name="com.sos_salgados.PedidoActivity"
             android:label="@string/title_activity_pedidos" >
         </activity>
         <activity
-            android:name=".AddItem"
+            android:name=".AddItemActivity"
             android:label="@string/title_activity_add_item" >
         </activity>
     </application>

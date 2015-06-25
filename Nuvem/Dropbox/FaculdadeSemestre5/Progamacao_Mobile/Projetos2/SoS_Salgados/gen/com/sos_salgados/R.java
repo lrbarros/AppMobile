@@ -1666,14 +1666,13 @@ containing a value of this type.
         public static final int action_settings=0x7f09004d;
         public static final int activity_chooser_view_content=0x7f090021;
         public static final int always=0x7f090014;
-        public static final int atendenteId=0x7f090044;
         public static final int beginning=0x7f09001b;
         public static final int bntCardapio=0x7f09004c;
         public static final int bntLogin=0x7f090042;
         public static final int bntPedido=0x7f09004b;
         public static final int btnAdd=0x7f090047;
-        public static final int btnCancel=0x7f090049;
-        public static final int btnOk=0x7f090048;
+        public static final int btnCancel=0x7f090048;
+        public static final int btnEnviar=0x7f090049;
         public static final int cardapioList=0x7f09003f;
         public static final int checkbox=0x7f090029;
         public static final int collapseActionView=0x7f090015;
@@ -1689,7 +1688,6 @@ containing a value of this type.
         public static final int home=0x7f090000;
         public static final int homeAsUp=0x7f09000e;
         public static final int icon=0x7f090026;
-        public static final int idHrPedido=0x7f090045;
         public static final int idPedido=0x7f090043;
         public static final int ifRoom=0x7f090016;
         public static final int image=0x7f090023;
@@ -1720,6 +1718,8 @@ containing a value of this type.
         public static final int submit_area=0x7f09003c;
         public static final int tabMode=0x7f09000c;
         public static final int title=0x7f090027;
+        public static final int txtAtendente=0x7f090044;
+        public static final int txtHrPedido=0x7f090045;
         public static final int txtSenha=0x7f090041;
         public static final int txtUsuario=0x7f090040;
         public static final int txtValor=0x7f090046;

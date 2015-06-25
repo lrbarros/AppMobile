@@ -10,13 +10,13 @@
         android:text="@string/idPedido" />
 
     <TextView
-        android:id="@+id/atendenteId"
+        android:id="@+id/txtAtendente"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/atendente" />
 
     <TextView
-        android:id="@+id/idHrPedido"
+        android:id="@+id/txtHrPedido"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/HR_Pedido" />
@@ -30,7 +30,7 @@
     <Button
         android:id="@+id/btnAdd"
         style="?android:attr/buttonStyleSmall"
-        android:layout_width="176dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:text="@string/AddItem" />
@@ -38,27 +38,29 @@
     <ListView
         android:id="@+id/cardapioList"
         android:layout_width="wrap_content"
-        android:layout_height="280dp" >
-    </ListView>
+        android:layout_height="230dp" >
 
+    </ListView>
+   
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" 
-android:orientation="horizontal" >
-         <Button
-             android:id="@+id/btnOk"
-             android:layout_width="wrap_content"
-             android:layout_height="wrap_content"
-             android:layout_weight="0.4"
-             android:text="@string/btnEnviar" />
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" >
 
-      <Button
-          android:id="@+id/btnCancel"
-          android:layout_width="wrap_content"
-          android:layout_height="wrap_content"
-          android:layout_weight="0.4"
-          android:text="@string/bntCancel" />
-        
+        <Button
+            android:id="@+id/btnCancel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.5"
+            android:text="@string/bntCancel" />
+
+        <Button
+            android:id="@+id/btnEnviar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.50"
+            android:text="@string/btnEnviar" />
+
     </LinearLayout>
    
 </LinearLayout>
