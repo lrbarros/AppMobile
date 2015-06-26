@@ -22,5 +22,15 @@
     <string name="bntCancel">Cancelar</string>
     <string name="btnEnviar">Enviar</string>
     <string name="title_activity_add_item">AddItem</string>
+    <string name="exibirPedidos">Pedidos</string>
+    <string name="about">Sobre o produto</string>
+    <string name="suporte">Suporte</string>
+    <string name="txt1">ADD</string>
+    <string name="txt02">CARDAPIO</string>
+    <string name="title_activity_item_cardapio">ItemCardapioActivity</string>
+    <string name="txt2">Salvar</string>
+    <string name="txtv1">Nome</string>
+    <string name="txtv2">Valor</string>
+    <string name="txtv3">Descrição</string>
 
 </resources>

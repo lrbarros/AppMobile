@@ -17,9 +17,9 @@ public class DBHelper extends SQLiteOpenHelper {
 	
 	public static final String SQL_CREATE_TABLE_CARDAPIO = "CREATE TABLE " + TABLE_CARDAPIO + "("
 				+ "_id INTEGER PRIMARY KEY AUTOINCREMENT, "
-				+ "name TEXT NOT NULL, "
-				+ "descricao TEXT, "
-				+ "valor REAL NOT NULL);";
+				+ "nome TEXT NOT NULL, "
+				+ "valor TEXT,"
+				+ "descricao TEXT);";
 	
 	public static final String SQL_CREATE_TABLE_PEDIDO = "CREATE TABLE " + TABLE_PEDIDO + "("
 				+ "_id INTEGER PRIMARY KEY AUTOINCREMENT, "
@@ -29,7 +29,11 @@ public class DBHelper extends SQLiteOpenHelper {
 	public static final String SQL_CREATE_TABLE_ITENS = "CREATE TABLE " + TABLE_ITENS + "("
 			+ "_id INTEGER PRIMARY KEY AUTOINCREMENT, "
 			+ "idpedido INTEGER ,"
-			+ "idcardapio INTEGER);";
+			+ "idcardapio INTEGER,"
+			+ "nome TEXT,"
+			+ "descricao TEXT,"
+			+ "valor REAL);";
+
 	
 	public DBHelper(Context context) {
 		super(context, DATABASE_NAME, null, DATABASE_VERSION);

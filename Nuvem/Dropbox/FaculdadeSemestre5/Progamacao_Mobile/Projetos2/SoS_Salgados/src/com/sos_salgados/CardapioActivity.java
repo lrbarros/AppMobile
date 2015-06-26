@@ -1,22 +1,47 @@
 package com.sos_salgados;
 
-import com.sos_salgados.R;
-import com.sos_salgados.R.id;
-import com.sos_salgados.R.layout;
-import com.sos_salgados.R.menu;
+
 
 import android.support.v7.app.ActionBarActivity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.widget.Button;
+import android.widget.TextView;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
+
 
 public class CardapioActivity extends ActionBarActivity {
+	Button btadd;
+	private SQLiteDatabase mDatabase;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_cardapio);
+		
+
+		
+		
+	
+		btadd = (Button) findViewById(R.id.button1);
+		btadd.setOnClickListener(btaddListener);
+		
+		
 	}
+	private OnClickListener btaddListener = new OnClickListener() {
+		@Override
+		public void onClick(View v) {
+			
+			Intent i = new Intent(CardapioActivity.this, ItemCardapioActivity.class);
+			startActivity(i);
+	}
+	};
+
 
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {

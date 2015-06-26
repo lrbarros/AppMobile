@@ -13,7 +13,7 @@ public class CardapioDAO  implements Serializable{
 		 item.setId(1);
 		 item.setNome("Coxinha de carne");
 		 item.setDescricao("Massa de batata,Carne de boi");
-		 item.setValor(2.9);
+		 item.setValor(2.90);
 		 
 		 this.cardapio.add(item);
 		 item = new ItemCardapio();
@@ -21,7 +21,7 @@ public class CardapioDAO  implements Serializable{
 		 item.setId(2);
 		 item.setNome("CocaCola");
 		 item.setDescricao("Refrigerante");
-		 item.setValor(3.0);
+		 item.setValor(3.00);
 		 this.cardapio.add(item);
 		 
 		 item = new ItemCardapio();

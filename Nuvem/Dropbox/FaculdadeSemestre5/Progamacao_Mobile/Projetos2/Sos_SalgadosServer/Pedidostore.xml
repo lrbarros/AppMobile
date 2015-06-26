@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<pedidoStore>
+    <name>store</name>
+    <pedidoList>
+        <id>1</id>
+        <idCardapio>0</idCardapio>
+        <idPedido>1</idPedido>
+        <nome>Coxinha de carne</nome>
+        <valor>2.9</valor>
+    </pedidoList>
+</pedidoStore>

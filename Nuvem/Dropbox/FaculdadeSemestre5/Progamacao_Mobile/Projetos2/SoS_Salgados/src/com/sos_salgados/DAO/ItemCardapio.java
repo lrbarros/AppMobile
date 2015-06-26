@@ -5,6 +5,8 @@ import java.io.Serializable;
 public class ItemCardapio implements Serializable {
 
 	private long id;
+	private int idPedido;
+	private int idCardapio;
 	private String nome;
 	private String descricao;
 	private double valor;
@@ -14,6 +16,22 @@ public class ItemCardapio implements Serializable {
 		return "Cod:" + id + " - " + nome +  "\nValor: " + valor ;
 	}
 	
+	public int getIdPedido() {
+		return idPedido;
+	}
+
+	public void setIdPedido(int idPedido) {
+		this.idPedido = idPedido;
+	}
+
+	public int getIdCardapio() {
+		return idCardapio;
+	}
+
+	public void setIdCardapio(int idCardapio) {
+		this.idCardapio = idCardapio;
+	}
+
 	public long getId() {
 		return id;
 	}

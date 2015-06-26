@@ -13,6 +13,7 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 public class MainActivity extends ActionBarActivity implements Serializable {
 
@@ -44,6 +45,7 @@ public class MainActivity extends ActionBarActivity implements Serializable {
 	public boolean onCreateOptionsMenu(Menu menu) {
 		// Inflate the menu; this adds items to the action bar if it is present.
 		getMenuInflater().inflate(R.menu.main, menu);
+		
 		return true;
 	}
 
@@ -54,7 +56,14 @@ public class MainActivity extends ActionBarActivity implements Serializable {
 		// as you specify a parent activity in AndroidManifest.xml.
 		int id = item.getItemId();
 		if (id == R.id.action_settings) {
+			Toast.makeText(this, "Telefone para suporte \n Celular: (43) 8411-0891", Toast.LENGTH_LONG).show();
 			return true;
+			
+		}
+		if (id == R.id.menusobre) {
+			Toast.makeText(this, "Sos_Salgados LTDA", Toast.LENGTH_LONG).show();
+			return true;
+			
 		}
 		return super.onOptionsItemSelected(item);
 	}

@@ -1,9 +1,19 @@
 package com.sos_salgados;
 
+import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
 import java.util.GregorianCalendar;
 
+import org.apache.http.Header;
+import org.apache.http.entity.StringEntity;
+import org.apache.http.message.BasicHeader;
+import org.apache.http.protocol.HTTP;
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import com.Sos_Salgados.Util.HoraData;
+import com.loopj.android.http.AsyncHttpClient;
+import com.loopj.android.http.JsonHttpResponseHandler;
 import com.sos_salgados.R;
 import com.sos_salgados.DAO.ItemCardapio;
 import com.sos_salgados.DAO.ItemPedidoDAO;
@@ -13,8 +23,11 @@ import com.sos_salgados.R.id;
 import com.sos_salgados.R.layout;
 import com.sos_salgados.R.menu;
 
+import android.R.string;
 import android.support.v7.app.ActionBarActivity;
 import android.support.v7.internal.widget.AdapterViewCompat.OnItemClickListener;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
@@ -26,6 +39,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class PedidoActivity extends ActionBarActivity {
 	private final int PEDIDO_CODE=12;
@@ -102,16 +116,22 @@ public class PedidoActivity extends ActionBarActivity {
 		p.setAtendente(login);
 		p.setHrData(txtHora.getText().toString());
 		p.setValor(valor);
+		//Salva e retorna o id do banco
 		p.setId(pedidoDao.save(p));
 	
 		//Salva Itens do pedido referenciando com o pedido
 		for(ItemCardapio item: itensPedido){
 			itemDao = new ItemPedidoDAO(this);
-			itemDao.save(p,item);
-			setResult(RESULT_OK);
-			this.finish();
+			item.setIdPedido(Integer.parseInt(String.valueOf(p.getId())));
+			
+			item.setId(itemDao.save(p,item)); 
+			
+			enviarJson(item);
 		}
-		
+		Toast.makeText(PedidoActivity.this, "Código do pedido : "+p.getId(),
+		Toast.LENGTH_LONG).show();
+		setResult(RESULT_OK);
+		PedidoActivity.this.finish();
 	}
 	@Override
 	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
@@ -126,6 +146,42 @@ public class PedidoActivity extends ActionBarActivity {
 			}
 		
 	};
+	
+	public void enviarJson(ItemCardapio item){
+		String resourceURL = "http://10.0.2.2:4000/pedidos";
+		AsyncHttpClient httpClient = new AsyncHttpClient();
+		
+		//create Json object
+		JSONObject params = new JSONObject();
+		try {
+			params.put("id", item.getId());
+			params.put("idPedido", item.getIdPedido());
+			params.put("idCardapio", item.getIdCardapio());
+			params.putOpt("nome", item.getNome());
+			params.put("valor", item.getValor());
+		} catch (JSONException e1) {
+			e1.printStackTrace();
+		}
+		
+		StringEntity entity = null;
+		try {
+			entity = new StringEntity(params.toString());
+			//indicate that the message sent is a json file
+			entity.setContentType(new BasicHeader(HTTP.CONTENT_TYPE, "application/json"));	 
+		} catch (UnsupportedEncodingException e) {
+			e.printStackTrace();
+		}
+		
+		httpClient.post(PedidoActivity.this, resourceURL, entity, "application/json", new JsonHttpResponseHandler() {
+			public void onSuccess(int statusCode, Header[] headers, JSONObject response) {
+				
+				
+			};
+		});
+		
+	}
+
+	
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		// Inflate the menu; this adds items to the action bar if it is present.
